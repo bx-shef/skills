@@ -1,0 +1,37 @@
+# Проверки навыков — через общий Action из bx-shef/skills-standard:
+#   lint (в т.ч. классы против кода модулей) на каждом PR,
+#   eval через BitrixGPT, если задан секрет BXSHEF_EVAL_KEY.
+name: skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  skills:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Навыки ссылаются на классы модулей shef.* — берём свежий main каждого,
+      # чтобы навык про переименованный класс краснел здесь, а не у пользователя.
+      - name: Забрать модули
+        run: |
+          for m in options problems insync; do
+            git clone --depth 1 "https://github.com/bx-shef/$m.git" "modules/$m"
+          done
+
+      - uses: bx-shef/skills-standard/action@v1
+        with:
+          dir: skills
+          code: modules
+          eval-key: ${{ secrets.BXSHEF_EVAL_KEY }}
