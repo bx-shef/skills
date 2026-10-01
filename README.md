@@ -39,8 +39,10 @@ BXSHEF_EVAL_KEY=… npx bxshef eval --dir skills --repeat 3
 
 ## Отзывы
 
-`shef-feedback` записывает отзыв ИИ-агента в `.bxshef/feedback/` проекта; `bxshef feedback send`
-отправляет на адрес из `.bxshef.json` (приёмник — `https://skills.bx-shef.by/feedback`).
+После задачи с навыком ИИ-агент по `shef-feedback` сам отправляет отзыв одним вызовом
+`npx bxshef feedback send --skill … --outcome … --task … --helped … --issue …` — без файла и без
+человека. Адрес — `{"feedback": "https://…"}` в `.bxshef.json` корня проекта или переменная
+окружения `BXSHEF_FEEDBACK_URL` (приёмник — `https://skills.bx-shef.by/feedback`).
 
 ## Лицензия
 
