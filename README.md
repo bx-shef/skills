@@ -18,11 +18,28 @@ npx skills add bx-shef/skills
 
 ## Навыки
 
+Справочные — «как устроено»:
+
+| навык | о чём |
+|---|---|
+| `shef-options-blocks` | синглетон, реестр настроек, объект из массива, pid-блокировка |
+| `shef-options-traits` | трейты shef.options: что даёт, когда брать |
+| `shef-options-components` | `AComponent`, ajax, `Builder`, фильтры прав |
+| `shef-options-settings` | страница настроек на `ShOptionsConfig` |
+| `shef-options-installer` | установка смарт-процессов, UF и пресетов |
+
+Операционные — «сделай по канону»:
+
 | навык | что делает |
 |---|---|
+| `shef-new-module` | скелет нового модуля на базе `shef.options` |
+| `shef-new-component` | компонент на `AComponent` |
+| `shef-new-ajax-action` | ajax-действие с правильными фильтрами |
+| `shef-new-option` | опция на страницу настроек |
+| `shef-new-agent` | агент или cron с блокировкой |
+| `shef-use-component` | подключить готовый компонент из кода |
+| `shef-use-logger` | логирование через `shef.problems` |
 | `shef-feedback` | отзыв о навыке после задачи — что пригодилось, чего не хватило; обязателен в наборе |
-
-Остальные навыки переезжают сюда из репозиториев модулей.
 
 ## Проверка
 
