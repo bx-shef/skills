@@ -2,8 +2,8 @@
 
 ![skills](https://github.com/bx-shef/skills/actions/workflows/skills.yml/badge.svg)
 
-Навыки к модулям [shef.options](https://github.com/bx-shef/options),
-[shef.problems](https://github.com/bx-shef/problems), [shef.insync](https://github.com/bx-shef/insync)
+Навыки к модулям [shef.options](https://github.com/bx-shef/options) и
+[shef.problems](https://github.com/bx-shef/problems)
 по методологии [bx-shef/skills-standard](https://github.com/bx-shef/skills-standard).
 Навык — папка со `SKILL.md` по стандарту [Agent Skills](https://agentskills.io); ИИ-агент
 берёт его сам по описанию и делает по канону модуля.
@@ -44,7 +44,7 @@ npx skills add bx-shef/skills
 ## Проверка
 
 На каждом PR — [Action](https://github.com/bx-shef/skills-standard/tree/main/action):
-`bxshef lint` (форма, evals, классы против свежих `main` трёх модулей) и `bxshef eval`
+`bxshef lint` (форма, evals, классы против свежих `main` модулей, которые навыки называют) и `bxshef eval`
 (выбор навыка моделью по фразе, порог 0.9 при 3 повторах). Локально:
 
 ```bash

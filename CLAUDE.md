@@ -6,7 +6,7 @@
 Проверка перед сдачей — то же, что CI:
 
 ```bash
-for m in options problems insync; do git clone --depth 1 https://github.com/bx-shef/$m modules/$m; done
+for m in options problems; do git clone --depth 1 https://github.com/bx-shef/$m modules/$m; done
 npx bxshef lint --dir skills --code modules
 BXSHEF_EVAL_KEY=… npx bxshef eval --dir skills --repeat 3     # ключ — из окружения
 ```

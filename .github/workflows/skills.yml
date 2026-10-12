@@ -26,7 +26,7 @@ jobs:
       # чтобы навык про переименованный класс краснел здесь, а не у пользователя.
       - name: Забрать модули
         run: |
-          for m in options problems insync; do
+          for m in options problems; do
             git clone --depth 1 "https://github.com/bx-shef/$m.git" "modules/$m"
           done
 
