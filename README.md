@@ -64,4 +64,4 @@ BXSHEF_EVAL_KEY=… npx bxshef eval --dir skills --repeat 3
 
 ## Лицензия
 
-MIT.
+Права принадлежат ООО «БэИксШефБай» (УНП 194058497), условия — в [LICENSE](./LICENSE).
